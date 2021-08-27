@@ -4,12 +4,12 @@
 	[x] Add detail page
 		[ ] Show all details including all genres for selected movie
 			[ ] Get request for selected movie
-		[ ] Back button for getting back to list page
-	[ ] Click function for movie poster
-[ ] Route for add movie page
-	[ ] Input field for movie title
-	[ ] Input field for movie poster (image url)
-	[ ] Textarea for the movie description	
-	[ ] Dropdown for genres
-	[ ] Cancel button for bringing user back to home page
-	[ ] Save button which save inputs into the database which brings the user back to the 			list page and has the new movie
+		[x] Back button for getting back to list page
+	[x] Click function for movie poster
+[x] Route for add movie page
+	[x] Input field for movie title
+	[x] Input field for movie poster (image url)
+	[x] Textarea for the movie description	
+	[x] Dropdown for genres
+	[x] Cancel button for bringing user back to home page
+	[ ] Save button which save inputs into the database which brings the user back to the list page and has the new movie
