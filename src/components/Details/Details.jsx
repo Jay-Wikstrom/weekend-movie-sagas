@@ -5,7 +5,7 @@ function DisplayDetails(){
 
     const handleClick = () => {
         console.log('clicked')
-        history.push('/home');
+        history.push('/');
     }
 
     return (

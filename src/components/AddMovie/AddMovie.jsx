@@ -3,14 +3,14 @@ import { useHistory } from 'react-router-dom';
 function AddMovie() {
     const history = useHistory();
 
-    const handleCancelClick = () => {
-        console.log('clicked')
-        history.push('/home');
-    }
-
     const handleSaveClick = () => {
         console.log('clicked')
-        history.push('/home');
+        history.push('/');
+    }
+
+    const handleCancelClick = () => {
+        console.log('clicked')
+        history.push('/');
     }
 
     return (
