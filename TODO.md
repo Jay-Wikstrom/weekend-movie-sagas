@@ -1,7 +1,7 @@
 [x] Create database
 [x] npm install
-[ ] When a movie poster is clicked, a user should be brought to the /details view for that movie.
-	[ ] Add detail page
+[x] When a movie poster is clicked, a user should be brought to the /details view for that movie.
+	[x] Add detail page
 		[ ] Show all details including all genres for selected movie
 			[ ] Get request for selected movie
 		[ ] Back button for getting back to list page
