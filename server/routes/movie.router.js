@@ -3,7 +3,6 @@ const router = express.Router();
 const pool = require('../modules/pool')
 
 router.get('/', (req, res) => {
-
   const query = `SELECT * FROM movies ORDER BY "title" ASC`;
   pool.query(query)
     .then(result => {
@@ -30,8 +29,8 @@ router.get('/:id', (req, res) => {
     JOIN "genres" 
       ON "movies_genres".genre_id = "genres".id
     WHERE "movies".id = $1
-    GROUP BY "movies".id;`;
-
+    GROUP BY "movies".id;
+    `;
   pool
     .query(query, [movieId])
     .then((result) => {

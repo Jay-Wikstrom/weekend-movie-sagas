@@ -24,16 +24,19 @@ function* fetchAllMovies() {
     try {
         const movies = yield axios.get('/api/movie');
         console.log('get all:', movies.data);
+        //put data into the redux store
         yield put({ type: 'SET_MOVIES', payload: movies.data });
 
     } catch {
         console.log('get all error');
     };
-};
+}; //end fetch all movie function
 
 function* fetchMovie(action) {
+    //get single movie
     try {
         let response = yield axios.get(`/api/movie/${action.payload.id}`);
+        //put data into the redux store
         yield put({
             type: 'SET_MOVIE',
             payload: response.data,
@@ -44,10 +47,11 @@ function* fetchMovie(action) {
 }; // end fetchMovie
 
 function* fetchGenres() {
-    // get all movies from the DB
+    // get all genres from the DB
     try {
         const response = yield axios.get('/api/genre');
         console.log('get all:', response.data);
+        //put data into the redux store
         yield put({ 
             type: 'SET_GENRES', 
             payload: response.data 
@@ -59,14 +63,16 @@ function* fetchGenres() {
 
 function* addMovie(action){
     try{
+        //POST to api/movie erver
         yield axios.post('api/movie', action.payload);
         put({
+            //Fetch from server
             type: 'FETCH_MOVIES'
         })
     } catch (error){
         console.log(error)
     }
-}
+}; //end addMovie function
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
@@ -91,6 +97,7 @@ const genres = (state = [], action) => {
     };
 };
 
+// Used to store a single movie 
 const movie = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOVIE':

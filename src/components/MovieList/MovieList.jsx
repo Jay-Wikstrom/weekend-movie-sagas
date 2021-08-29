@@ -11,13 +11,16 @@ function MovieList() {
     const history = useHistory();
 
     useEffect(() => {
+        //fetch movies on page load
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
     const handleClick = () => {
+        //move user to the add-movie page
         history.push('/add-movie');
-    }
+    };
 
+    //Add padding and margin to Add Movie button
     const useStyles = makeStyles({
         field: {
             padding: 25,

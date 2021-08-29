@@ -22,6 +22,6 @@
 	[x] Styling
 		[x] Cards
 		[x] Grids
-	[ ] Code cleanup
-	[ ] Add comments
-	[ ] Add Project description
+	[x] Code cleanup
+	[x] Add comments
+	[x] Add Project description

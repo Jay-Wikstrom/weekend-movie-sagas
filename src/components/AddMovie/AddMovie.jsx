@@ -11,6 +11,7 @@ function AddMovie() {
     const history = useHistory();
     const dispatch = useDispatch();
 
+    //genres reducer
     const genres = useSelector((store) => store.genres);
 
     const [title, setTitle] = useState('');
@@ -19,13 +20,16 @@ function AddMovie() {
     const [genre, setGenre] = useState('');
 
     useEffect(() => {
+        //Fetch genres on page load
         dispatch({ type: 'FETCH_GENRES' });
     }, []);
 
     const handleSaveClick = (e) => {
         e.preventDefault();
+        //send user to home page
         history.push('/');
 
+        //Send movie to saga
         dispatch({
             type: 'ADD_MOVIE',
             payload:{
@@ -35,16 +39,21 @@ function AddMovie() {
                 genre: genre
             }
         })
-    }
+    }; //end handleSaveClick
 
     const handleCancelClick = () => {
+        //clear inputs on cancel
         setTitle('');
         setPoster('');
         setDescription('');
         setGenre('');
+        //Send user back to home page
         history.push('/');
-    }
+    }; //end handleCancelClick
 
+    //Change the padding of the 
+    //save and cancel button to 
+    //better align with form
     const useStyles = makeStyles({
         saveBtn: {
             paddingLeft: 40
@@ -52,7 +61,7 @@ function AddMovie() {
         cancelBtn: {
             paddingRight: 35
         }
-    })
+    });
     const classes = useStyles()
 
     return (

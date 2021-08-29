@@ -6,14 +6,16 @@ import './Details.css'
 
 function DisplayDetails() {
     const history = useHistory();
+    //Access url parameters 
     const params = useParams();
     const dispatch = useDispatch();
 
+    //movie reducer
     const movie = useSelector((store) => store.movie);
 
 
     useEffect(() => {
-        //grab details about specific movie
+        //fetch movie on page load
         dispatch({
             type: 'FETCH_MOVIE',
             payload: { id: params.id },
@@ -38,7 +40,6 @@ function DisplayDetails() {
                     ) : (
                         <ul>none</ul>
                     )}
-
 
                     <p>{movie.description}</p>
                 </Grid>
