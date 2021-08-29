@@ -12,6 +12,10 @@ function MovieList() {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
+    const handleClick = () => {
+        history.push('/add-movie');
+    }
+
     return (
         <main>
             <h1>MovieList</h1>
@@ -29,6 +33,7 @@ function MovieList() {
                     );
                 })}
             </section>
+            <button onClick={handleClick}>Add Movie</button>
         </main>
 
     );

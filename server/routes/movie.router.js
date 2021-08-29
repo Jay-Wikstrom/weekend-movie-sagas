@@ -38,7 +38,6 @@ router.get('/:id', (req, res) => {
       res.send(result.rows[0]);
     })
     .catch((error) => {
-      console.log('Error in exact query', error);
       res.sendStatus(500);
     });
 });

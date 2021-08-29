@@ -22,9 +22,23 @@ function AddMovie() {
     const handleSaveClick = (e) => {
         e.preventDefault();
         history.push('/');
+
+        dispatch({
+            type: 'ADD_MOVIE',
+            payload:{
+                title: title,
+                poster: poster,
+                description: description,
+                genre: genre
+            }
+        })
     }
 
     const handleCancelClick = () => {
+        setTitle('');
+        setPoster('');
+        setDescription('');
+        setGenre('');
         history.push('/');
     }
 
