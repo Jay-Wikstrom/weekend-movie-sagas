@@ -13,6 +13,15 @@
 	[x] Textarea for the movie description	
 	[x] Dropdown for genres
 	[x] Cancel button for bringing user back to home page
-	[ ] Save button 
-		[ ] which save inputs into the database 
-		[ ] bring the user back to the list page with the new movie
+	[x] Save button 
+		[x] which save inputs into the database 
+		[x] bring the user back to the list page with the new movie
+
+
+	[ ] Figure out mapping categories
+	[ ] Styling
+		[ ] Cards
+		[ ] Grids
+	[ ] Code cleanup
+	[ ] Add commits
+	[ ] Add Project description

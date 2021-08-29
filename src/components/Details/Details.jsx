@@ -25,10 +25,11 @@ function DisplayDetails() {
             <h3>{movie.title}</h3>
 
             {/* <ul>
-                {movie.array_agg.map((genre) => {
-                    return <li>{genre}</li>;
+                {movie.array_agg.map ((genre, i) => {
+                    return <li key={i}>{genre}</li>;
                 })}
             </ul> */}
+
 
             <p>{movie.description}</p>
 
