@@ -2,8 +2,9 @@
 [x] npm install
 [x] When a movie poster is clicked, a user should be brought to the /details view for that movie.
 	[x] Add detail page
-		[ ] Show all details including all genres for selected movie
-			[ ] Get request for selected movie
+		[x] Show all details 
+		[ ] including all genres for selected movie
+			[x] Get request for selected movie
 		[x] Back button for getting back to list page
 	[x] Click function for movie poster
 [x] Route for add movie page
@@ -12,4 +13,6 @@
 	[x] Textarea for the movie description	
 	[x] Dropdown for genres
 	[x] Cancel button for bringing user back to home page
-	[ ] Save button which save inputs into the database which brings the user back to the list page and has the new movie
+	[ ] Save button 
+		[ ] which save inputs into the database 
+		[ ] bring the user back to the list page with the new movie
