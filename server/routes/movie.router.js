@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 // GET MOVIE BY ID
 router.get('/:id', (req, res) => {
   const movieId = req.params.id;
-  const sqlText = `SELECT 
+  const query = `SELECT 
       "movies".id, 
       "movies".title, 
       "movies".poster, 
@@ -33,9 +33,9 @@ router.get('/:id', (req, res) => {
     GROUP BY "movies".id;`;
 
   pool
-    .query(sqlText, [movieId])
-    .then((dbRes) => {
-      res.send(dbRes.rows[0]);
+    .query(query, [movieId])
+    .then((result) => {
+      res.send(result.rows[0]);
     })
     .catch((error) => {
       console.log('Error in exact query', error);

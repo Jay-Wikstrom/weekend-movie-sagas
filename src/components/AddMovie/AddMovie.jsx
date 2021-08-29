@@ -1,15 +1,30 @@
 import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useState } from 'react';
+
 
 function AddMovie() {
     const history = useHistory();
+    const dispatch = useDispatch();
 
-    const handleSaveClick = () => {
-        console.log('clicked')
+    const genres = useSelector((store) => store.genres);
+
+    const [title, setTitle] = useState('');
+    const [poster, setPoster] = useState('');
+    const [description, setDescription] = useState('');
+    const [genre, setGenre] = useState('');
+
+    useEffect(() => {
+        dispatch({ type: 'FETCH_GENRES' });
+    }, []);
+
+    const handleSaveClick = (e) => {
+        e.preventDefault();
         history.push('/');
     }
 
     const handleCancelClick = () => {
-        console.log('clicked')
         history.push('/');
     }
 
@@ -19,30 +34,29 @@ function AddMovie() {
                 <input
                     type="text"
                     placeholder="Movie Title"
+                    onChange={(e) => setTitle(e.target.value)}
+                    value={title}
+                    required
                 />
                 <input
                     type="text"
-                    placeholder="Movie Title"
                     placeholder="Movie Poster"
+                    onChange={(e) => setPoster(e.target.value)}
+                    value={poster}
+                    required
                 />
-                <textarea></textarea>
+                <textarea
+                    onChange={(e) => setDescription(e.target.value)}
+                    value={description}
+                    required
+                >
 
-                {/* <label htmlFor="genres">Choose a genre:</label> */}
+                </textarea>
 
-                <select name="cars" id="cars">
-                    <option value="adventure">Adventure</option>
-                    <option value="animated">Animated</option>
-                    <option value="biographical">Biographical</option>
-                    <option value="comedy">Comedy</option>
-                    <option value="diaster">Diaster</option>
-                    <option value="drama">Drama</option>
-                    <option value="epic">Epic</option>
-                    <option value="fantasy">Fantasy</option>
-                    <option value="musical">Musical</option>
-                    <option value="romantic">Romantic</option>
-                    <option value="scienceFiction">Science Fiction</option>
-                    <option value="spaceOpera">Space-Opera</option>
-                    <option value="superhero">Superhero</option>
+                <select name="genre" onChange={(e) => setGenre(e.target.value)}>
+                    {genres.map((genre, i) => {
+                        return <option key={i} value={genre.id}>{genre.name}</option>
+                    })}
                 </select>
                 <br />
                 <br />

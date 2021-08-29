@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
   const query = `
       SELECT * 
       FROM "genres" 
-      ORDER BY "title" ASC
+      ORDER BY "name" ASC
     `;
   pool.query(query)
     .then(result => {
