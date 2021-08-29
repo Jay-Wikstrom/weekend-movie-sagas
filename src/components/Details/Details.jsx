@@ -24,11 +24,15 @@ function DisplayDetails() {
 
             <h3>{movie.title}</h3>
 
-            {/* <ul>
-                {movie.array_agg.map ((genre, i) => {
-                    return <li key={i}>{genre}</li>;
-                })}
-            </ul> */}
+            {movie.array_agg ? (
+                <ul>
+                    {movie.array_agg.map((genre, index) => {
+                        return <li key={index}>{genre}</li>;
+                    })}
+                </ul>
+            ) : (
+                <ul>none</ul>
+            )}
 
 
             <p>{movie.description}</p>

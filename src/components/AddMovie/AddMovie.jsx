@@ -2,6 +2,20 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import './AddMovie.css';
+
+import {
+    TextField,
+    Card,
+    Container,
+    Select,
+    MenuItem,
+    Button,
+    Grid,
+    InputLabel,
+    FormControl,
+    makeStyles, Paper
+} from '@material-ui/core';
 
 
 function AddMovie() {
@@ -42,42 +56,84 @@ function AddMovie() {
         history.push('/');
     }
 
+    const useStyles = makeStyles({
+        saveBtn: {
+            paddingLeft: 40
+        },
+        cancelBtn: {
+            paddingRight: 35
+        }
+    })
+    const classes = useStyles()
+
     return (
-        <div>
+        <Container>
             <form onSubmit={handleSaveClick}>
-                <input
-                    type="text"
-                    placeholder="Movie Title"
-                    onChange={(e) => setTitle(e.target.value)}
-                    value={title}
-                    required
+            <Grid>
+                <Grid>
+                    <TextField
+                        type="text"
+                        variant="outlined"
+                        label="Title"
+                        onChange={(e) => setTitle(e.target.value)}
+                        value={title}
+                        required
                 />
-                <input
-                    type="text"
-                    placeholder="Movie Poster"
-                    onChange={(e) => setPoster(e.target.value)}
-                    value={poster}
-                    required
+                </Grid>
+                <Grid>
+                    <TextField
+                        type="text"
+                        variant="outlined"
+                        label="Poster Image"
+                        onChange={(e) => setPoster(e.target.value)}
+                        value={poster}
+                        required
                 />
-                <textarea
-                    onChange={(e) => setDescription(e.target.value)}
-                    value={description}
-                    required
-                >
-
-                </textarea>
-
-                <select name="genre" onChange={(e) => setGenre(e.target.value)}>
-                    {genres.map((genre, i) => {
-                        return <option key={i} value={genre.id}>{genre.name}</option>
-                    })}
-                </select>
-                <br />
-                <br />
-                <button>Save</button>
-                <button onClick={handleCancelClick}>Cancel</button>
+                </Grid>
+                <Grid>
+                    <TextField
+                        label="Description"
+                        variant="outlined"
+                        rows={4}
+                        onChange={(e) => setDescription(e.target.value)}
+                        value={description}
+                        required
+                />
+                </Grid>
+                <Grid>
+                    <FormControl variant="outlined" className="formInput">
+                    <InputLabel id="pickGenre">Pick a Genre</InputLabel>
+                    <Select 
+                        name="genre"
+                        label="pickGenre"
+                        onChange={(e) => setGenre(e.target.value)}
+                    >
+                        {genres.map((genre, i) => {
+                            return <option key={i} value={genre.id}>{genre.name}</option>
+                        })}
+                    </Select>
+                    </FormControl>
+                </Grid>
+                <Grid>
+                    <Button 
+                        variant="contained"
+                        color="primary"
+                        className={classes.saveBtn}
+                    >
+                        Save
+                    </Button>
+                    <Button 
+                        variant="contained"
+                        color="secondary"
+                        className={classes.cancelBtn}
+                        onClick={handleCancelClick}
+                    >
+                        Cancel
+                    </Button>
+                </Grid>
+            </Grid>
             </form>
-        </div>
+        </Container>
     )
 }
 export default AddMovie;
