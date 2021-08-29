@@ -1,6 +1,8 @@
 import { useHistory, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Container, Button, Grid } from '@material-ui/core';
+import './Details.css'
 
 function DisplayDetails() {
     const history = useHistory();
@@ -19,26 +21,36 @@ function DisplayDetails() {
     }, []);
 
     return (
-        <div>
-            <img src={movie.poster} alt={movie.title} />
+        <Container maxWidth="md">
+            <Grid container spacing={2}>
+                <Grid item xs={4}>
+                    <img src={movie.poster} alt={movie.title} />
+                </Grid>
+                <Grid item xs={8}>
+                    <h3>{movie.title}</h3>
 
-            <h3>{movie.title}</h3>
-
-            {movie.array_agg ? (
-                <ul>
-                    {movie.array_agg.map((genre, index) => {
-                        return <li key={index}>{genre}</li>;
-                    })}
-                </ul>
-            ) : (
-                <ul>none</ul>
-            )}
+                    {movie.array_agg ? (
+                        <ul>
+                            {movie.array_agg.map((genre, index) => {
+                                return <li key={index}>{genre}</li>;
+                            })}
+                        </ul>
+                    ) : (
+                        <ul>none</ul>
+                    )}
 
 
-            <p>{movie.description}</p>
-
-            <button onClick={() => history.push('/')}>Back</button>
-        </div>
+                    <p>{movie.description}</p>
+                </Grid>
+            </Grid>
+            <Button 
+                variant="contained"
+                color="secondary"
+                onClick={() =>history.push('/')}
+            >
+                Back
+            </Button>
+        </Container>
     )
 }
 export default DisplayDetails;

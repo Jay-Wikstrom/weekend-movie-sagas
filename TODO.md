@@ -18,10 +18,10 @@
 		[x] bring the user back to the list page with the new movie
 
 
-	[ ] Figure out mapping categories
-	[ ] Styling
-		[ ] Cards
-		[ ] Grids
+	[x] Figure out mapping categories
+	[x] Styling
+		[x] Cards
+		[x] Grids
 	[ ] Code cleanup
-	[ ] Add commits
+	[ ] Add comments
 	[ ] Add Project description

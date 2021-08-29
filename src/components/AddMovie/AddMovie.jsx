@@ -4,18 +4,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import './AddMovie.css';
 
-import {
-    TextField,
-    Card,
-    Container,
-    Select,
-    MenuItem,
-    Button,
-    Grid,
-    InputLabel,
-    FormControl,
-    makeStyles, Paper
-} from '@material-ui/core';
+import {TextField, Container, Select, Button, Grid, InputLabel, FormControl, makeStyles} from '@material-ui/core';
 
 
 function AddMovie() {
