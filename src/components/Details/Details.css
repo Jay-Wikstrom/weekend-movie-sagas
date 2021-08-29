@@ -2,3 +2,7 @@ Button {
   width: 150px;
   float: right;
 }
+
+h3, p {
+    font-family: 'roboto slab', serif;
+}
