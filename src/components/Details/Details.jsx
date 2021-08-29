@@ -46,6 +46,7 @@ function DisplayDetails() {
             <Button 
                 variant="contained"
                 color="secondary"
+                className="detailBtn"
                 onClick={() =>history.push('/')}
             >
                 Back

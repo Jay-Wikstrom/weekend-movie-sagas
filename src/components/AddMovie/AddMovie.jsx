@@ -108,6 +108,7 @@ function AddMovie() {
                         variant="contained"
                         color="primary"
                         className={classes.saveBtn}
+                        onClick={handleSaveClick}
                     >
                         Save
                     </Button>
