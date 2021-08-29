@@ -15,7 +15,7 @@ function AddMovie() {
 
     return (
         <div>
-            <input 
+            <input
                 type="text"
                 placeholder="Movie Title"
             />

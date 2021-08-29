@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom';
 import './MovieList.css'
 
 function MovieList() {
-
     const dispatch = useDispatch();
     const movies = useSelector(store => store.movies);
     const history = useHistory();
@@ -12,11 +11,6 @@ function MovieList() {
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
-
-    const handleClick = () => {
-        console.log('clicked')
-        history.push('/details');
-    }
 
     return (
         <main>
@@ -26,7 +20,11 @@ function MovieList() {
                     return (
                         <div key={movie.id} >
                             <h3>{movie.title}</h3>
-                            <img src={movie.poster} onClick={handleClick} alt={movie.title}/>
+                            <img 
+                                src={movie.poster}
+                                alt={movie.title}
+                                onClick={() => history.push(`/details/${movie.id}`)}
+                             />
                         </div>
                     );
                 })}
