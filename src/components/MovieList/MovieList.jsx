@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import './MovieList.css'
+import { Container, Grid, Card, Button, makeStyles } from '@material-ui/core';
+
 
 function MovieList() {
     const dispatch = useDispatch();
@@ -16,25 +18,43 @@ function MovieList() {
         history.push('/add-movie');
     }
 
+    const useStyles = makeStyles({
+        field: {
+            padding: 25,
+            margin: 25,
+        }
+    })
+    const classes = useStyles()
+
     return (
-        <main>
-            <h1>MovieList</h1>
-            <section className="movies">
+        <Container maxWidth="lg">
+            <h1>Movies</h1>
+            <Grid container spacing={2}>
                 {movies.map(movie => {
                     return (
-                        <div key={movie.id} >
-                            <h3>{movie.title}</h3>
-                            <img 
-                                src={movie.poster}
-                                alt={movie.title}
-                                onClick={() => history.push(`/details/${movie.id}`)}
-                             />
-                        </div>
+                        <Grid item xs={4} key={movie.id}>
+                            <Card>
+                                <h3>{movie.title}</h3>
+                                
+                                <img 
+                                    src={movie.poster}
+                                    alt={movie.title}
+                                    onClick={() => history.push(`/details/${movie.id}`)}
+                                />
+                            </Card>
+                        </Grid>
                     );
                 })}
-            </section>
-            <button onClick={handleClick}>Add Movie</button>
-        </main>
+            </Grid>
+            <Button 
+                className={classes.field}
+                variant="contained"
+                color="primary"
+                onClick={handleClick}
+            >
+                Add Movie
+            </Button>
+        </Container>
 
     );
 }
