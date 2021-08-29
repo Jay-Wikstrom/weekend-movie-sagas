@@ -15,6 +15,7 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('FETCH_MOVIE', fetchMovie);
+    yield takeEvery('FETCH_GENRES', fetchGenres);
 };
 
 function* fetchAllMovies() {
@@ -40,6 +41,20 @@ function* fetchMovie(action) {
         console.log('Error in fetch movie', error);
     };
 }; // end fetchMovie
+
+function* fetchGenres() {
+    // get all movies from the DB
+    try {
+        const response = yield axios.get('/api/genre');
+        console.log('get all:', response.data);
+        yield put({ 
+            type: 'SET_GENRES', 
+            payload: response.data 
+        });
+    } catch {
+        console.log('get all error');
+    };
+};
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
