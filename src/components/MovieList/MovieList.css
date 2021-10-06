@@ -6,3 +6,10 @@
 h1, h3 {
     font-family: 'roboto slab', serif;
 }
+.poster {
+    width: 200px;
+}
+
+.movie-title {
+    color: #0718ff;
+}

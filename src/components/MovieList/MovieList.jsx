@@ -36,9 +36,10 @@ function MovieList() {
                     return (
                         <Grid item xs={4} key={movie.id}>
                             <Card>
-                                <h3>{movie.title}</h3>
+                                <h3 class="movie-title">{movie.title}</h3>
                                 
                                 <img 
+                                    class="poster"
                                     src={movie.poster}
                                     alt={movie.title}
                                     onClick={() => history.push(`/details/${movie.id}`)}
