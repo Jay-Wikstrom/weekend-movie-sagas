@@ -15,15 +15,6 @@ https://user-images.githubusercontent.com/82717484/136127739-b078eea4-30f4-4e92-
 
 
 
-
-
-![Screen Shot 2021-09-10 at 12 30 18 AM](https://user-images.githubusercontent.com/82717484/132804510-52c718eb-6f18-474b-bb4c-74cc834d5ad3.png)
-
-![Screen Shot 2021-09-10 at 12 30 31 AM](https://user-images.githubusercontent.com/82717484/132804521-df4c34c1-1cec-4295-a0c1-afac8041df49.png)
-
-![Screen Shot 2021-09-10 at 12 30 52 AM](https://user-images.githubusercontent.com/82717484/132804526-2767eed5-cf1e-4e84-b64e-a2a5765cf8be.png)
-
-
 Here is how you get this app running on your own machine:
 
 Create a database named saga_movies_weekend,
