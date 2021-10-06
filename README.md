@@ -9,9 +9,7 @@ In this project the user will access a gallery of movies.  When a poster is clic
 
 
 
-
-https://user-images.githubusercontent.com/82717484/136127739-b078eea4-30f4-4e92-a7af-b582f3e85cf0.mov
-
+https://user-images.githubusercontent.com/82717484/136135199-708ed4d2-35b6-4691-ba1f-aeed5bd232d7.mov
 
 
 
