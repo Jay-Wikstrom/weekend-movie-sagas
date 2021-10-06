@@ -31,7 +31,6 @@ function MovieList() {
 
     return (
         <Container maxWidth="lg">
-            <h1>Movies</h1>
             <Grid container spacing={2}>
                 {movies.map(movie => {
                     return (

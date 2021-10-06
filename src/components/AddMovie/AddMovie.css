@@ -8,3 +8,11 @@ form {
   width: 40%;
 }
 
+html {
+  background-color: lightseagreen;
+}
+
+.title {
+  color:rgb(253, 253, 253);
+}
+
